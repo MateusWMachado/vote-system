@@ -42,6 +42,7 @@ Comment the line <br />
 ```
 <br />
 Your code will look like this
+<br />
 ```shell script
  #spring.datasource.url=${JDBC_DATASOURCE-URL}
  
