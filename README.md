@@ -51,7 +51,7 @@ Your code will look like this
  spring.datasource.username=postgres
  spring.datasource.password=Postgres2019!
 ```
-
+<br />
 
 ## Brief Endpoints documentation
 
