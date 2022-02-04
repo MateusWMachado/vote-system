@@ -36,13 +36,7 @@ After running the docker compose command, enter the url "localhost:16543" and lo
 - Password: Postgres2019! <br />
 
 Then you will need to comment a line of code in application.properties and uncomment the rest about the database. <br />
-Comment the line <br />
-```shell script
- spring.datasource.url=${JDBC_DATASOURCE-URL}
-```
-<br />
-Your code will look like this
-<br />
+Your code will look like this <br />
 ```shell script
  #spring.datasource.url=${JDBC_DATASOURCE-URL}
  
@@ -51,7 +45,6 @@ Your code will look like this
  spring.datasource.username=postgres
  spring.datasource.password=Postgres2019!
 ```
-<br />
 
 ## Brief Endpoints documentation
 
