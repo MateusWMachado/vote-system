@@ -66,7 +66,7 @@ GET http://localhost:8080/api/v1/schedule/{id}
 ### Voting Sessions API
 #### Open Voting Session
 ```http request
-POST http://localhost:8080/api/v1/voting-session/
+POST http://localhost:8080/api/v1/vote-session/
 {
   "duration": 3,
   "idSchedule": 1
