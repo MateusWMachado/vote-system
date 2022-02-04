@@ -23,6 +23,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -107,7 +108,11 @@ class ScheduleServiceImplTest {
                 .cpf("287.538.880-06")
                 .build();
         VoteDTO voteDTO1 = scheduleService.voteSchedule(voteDTO);
+
+        assertNotNull(voteDTO1);
         assertEquals(voteDTO1.getVote(), "YES");
+        assertEquals(voteDTO1.getCpf(), voteDTO.getCpf());
+        assertEquals(voteDTO1.getIdSchedule(), voteDTO.getIdSchedule());
     }
 
     @DisplayName("Test to GET the results of a schedule")
@@ -135,9 +140,12 @@ class ScheduleServiceImplTest {
 
         scheduleService.voteSchedule(voteDTO);
 
-        ScheduleResultDTO scheduleResultDTO = scheduleService.scheduleResult(Objects.requireNonNull(schedule.getBody()).getId());
-        assertNotNull(scheduleResultDTO);
+        Thread.sleep(60500);
 
+        ScheduleResultDTO scheduleResultDTO = scheduleService.scheduleResult(Objects.requireNonNull(schedule.getBody()).getId());
+
+        assertNotNull(scheduleResultDTO);
+        assertEquals(scheduleResultDTO.getSubject(), savedSchedule.getSubject());
     }
 
     @DisplayName("Test to throw an exception if a associate tries to vote on a schedule that doesn't exist")

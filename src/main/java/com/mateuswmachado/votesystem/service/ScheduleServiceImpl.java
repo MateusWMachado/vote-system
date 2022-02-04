@@ -84,9 +84,9 @@ public class ScheduleServiceImpl implements ScheduleService {
     public ScheduleResultDTO scheduleResult(Long id) throws ScheduleNotFoundException {
         ScheduleDTO scheduleDTO = this.verifyIfScheduleExists(id);
 
-        /*if(scheduleDTO.getVoteSession().getEndTime().isAfter(LocalDateTime.now())){
+        if(scheduleDTO.getVoteSession().getEndTime().isAfter(LocalDateTime.now())){
             throw new ScheduleException("Schedule in progress");
-        }*/
+        }
 
         ScheduleResultDTO result = ScheduleResultDTO.builder()
                 .id(scheduleDTO.getId())
