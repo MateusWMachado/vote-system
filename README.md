@@ -107,6 +107,14 @@ http://localhost:8080/swagger-ui.html
 - For the conversion of the DTOs, I chose to use the MODELMAPPER lib, which abstracts this logic, making the code more readable.
 - Lombok was used to speed up code writing and readability
 
+## Heroku APP URL
+
+# https://challenge-vote-system-api.herokuapp.com/api/v1/
+
+## Swagger
+
+# https://challenge-vote-system-api.herokuapp.com/swagger-ui.html#/
+
 
 # Desafio Técnico
 ## Objetivo
