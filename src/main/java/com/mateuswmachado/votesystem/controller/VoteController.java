@@ -2,7 +2,6 @@ package com.mateuswmachado.votesystem.controller;
 
 import com.mateuswmachado.votesystem.dto.VoteDTO;
 import com.mateuswmachado.votesystem.exceptions.ScheduleNotFoundException;
-import com.mateuswmachado.votesystem.model.Vote;
 import com.mateuswmachado.votesystem.service.ScheduleService;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;

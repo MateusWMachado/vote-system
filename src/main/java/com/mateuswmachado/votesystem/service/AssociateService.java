@@ -2,7 +2,6 @@ package com.mateuswmachado.votesystem.service;
 
 import com.mateuswmachado.votesystem.dto.AssociateDTO;
 import com.mateuswmachado.votesystem.exceptions.AssociatedNotFoundException;
-import com.mateuswmachado.votesystem.model.Associate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.UriComponentsBuilder;
 

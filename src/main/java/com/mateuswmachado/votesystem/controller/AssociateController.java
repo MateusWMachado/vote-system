@@ -2,7 +2,6 @@ package com.mateuswmachado.votesystem.controller;
 
 import com.mateuswmachado.votesystem.dto.AssociateDTO;
 import com.mateuswmachado.votesystem.exceptions.AssociatedNotFoundException;
-import com.mateuswmachado.votesystem.model.Associate;
 import com.mateuswmachado.votesystem.service.AssociateService;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;

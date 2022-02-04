@@ -5,14 +5,11 @@ import com.mateuswmachado.votesystem.dto.UserStatusDTO;
 import com.mateuswmachado.votesystem.enums.UserStatus;
 import com.mateuswmachado.votesystem.exceptions.AssociateAlreadyVotedException;
 import com.mateuswmachado.votesystem.exceptions.ScheduleException;
-import com.mateuswmachado.votesystem.kafka.producer.ResultProducer;
-import com.mateuswmachado.votesystem.repository.ScheduleRepository;
 import com.mateuswmachado.votesystem.rest.InfoAssociateCPF;
 import com.mateuswmachado.votesystem.service.AssociateService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
