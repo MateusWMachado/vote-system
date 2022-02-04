@@ -34,12 +34,9 @@ After running the docker compose command, enter the url "localhost:16543" and lo
 - Maintenance Database: postgres
 - Username: postgres
 - Password: Postgres2019! <br />
+
 Then you will need to comment a line of code in application.properties and uncomment the rest about the database. <br />
-Comment the line 
-```shell script
- spring.datasource.url=${JDBC_DATASOURCE-URL}
-```
-Your code will look like this
+Your code will look like this <br />
 ```shell script
  #spring.datasource.url=${JDBC_DATASOURCE-URL}
  
@@ -48,7 +45,6 @@ Your code will look like this
  spring.datasource.username=postgres
  spring.datasource.password=Postgres2019!
 ```
-
 
 ## Brief Endpoints documentation
 
@@ -70,7 +66,7 @@ GET http://localhost:8080/api/v1/schedule/{id}
 ### Voting Sessions API
 #### Open Voting Session
 ```http request
-POST http://localhost:8080/api/v1/voting-session/
+POST http://localhost:8080/api/v1/vote-session/
 {
   "duration": 3,
   "idSchedule": 1
@@ -106,6 +102,14 @@ http://localhost:8080/swagger-ui.html
 - For API development: Java 11, Spring Framework and PostgreSQL database.
 - For the conversion of the DTOs, I chose to use the MODELMAPPER lib, which abstracts this logic, making the code more readable.
 - Lombok was used to speed up code writing and readability
+
+## Heroku APP URL
+
+https://challenge-vote-system-api.herokuapp.com/api/v1/
+
+## Swagger
+
+https://challenge-vote-system-api.herokuapp.com/swagger-ui.html#/
 
 
 # Desafio Técnico
