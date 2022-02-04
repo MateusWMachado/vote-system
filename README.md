@@ -12,7 +12,7 @@ $ docker-compose up -d
 
 ## How to build the application
 
-To run the command "mvn install" it is necessary to have made the connection with the database before, otherwise the tests will fail.
+To run the command "mvn install" it is necessary to have made the connection with the database before, otherwise the tests will fail, to know how to make the connection with the database, look at the section on how to run the application.
 
 ```shell script
 $ mvn install
