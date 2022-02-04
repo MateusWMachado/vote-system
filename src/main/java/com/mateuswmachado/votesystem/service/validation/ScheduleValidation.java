@@ -40,10 +40,10 @@ public class ScheduleValidation {
     public void validateIfAssociateCanVote(String cpf)  {
         UserStatusDTO userStatusDTO = infoAssociateCPF.validateAssociateCPF(cpf);
         if(UserStatus.ABLE_TO_VOTE.getStatus().equals(userStatusDTO.getStatus())) {
-            log.info("Usuario do cpf {} habilitado para votar", cpf);
+            log.info("ScheduleValidation.validateIfAssociateCanVote - user cpf result: [{}]", cpf);
         } else if (UserStatus.UNABLE_TO_VOTE.getStatus().equals(userStatusDTO.getStatus())) {
-            log.info("O Associado de cpf "+ cpf +", não tem permissao para votar!");
-            throw new ScheduleException("O Associado de cpf "+ cpf +", não tem permissao para votar!");
+            log.info("ScheduleValidation.validateIfAssociateCanVote - user cpf result: [{}]", cpf);
+            throw new ScheduleException("The Associate with CPF: "+ cpf +", is not allowed to vote");
         }
     }
 }
