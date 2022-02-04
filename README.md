@@ -33,7 +33,8 @@ After running the docker compose command, enter the url "localhost:16543" and lo
 - Port: 5432
 - Maintenance Database: postgres
 - Username: postgres
-- Password: Postgres2019! <br />
+- Password: Postgres2019! 
+<br />
 Then you will need to comment a line of code in application.properties and uncomment the rest about the database. <br />
 Comment the line 
 ```shell script
@@ -109,11 +110,11 @@ http://localhost:8080/swagger-ui.html
 
 ## Heroku APP URL
 
-# https://challenge-vote-system-api.herokuapp.com/api/v1/
+https://challenge-vote-system-api.herokuapp.com/api/v1/
 
 ## Swagger
 
-# https://challenge-vote-system-api.herokuapp.com/swagger-ui.html#/
+https://challenge-vote-system-api.herokuapp.com/swagger-ui.html#/
 
 
 # Desafio Técnico
