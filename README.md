@@ -33,8 +33,8 @@ After running the docker compose command, enter the url "localhost:16543" and lo
 - Port: 5432
 - Maintenance Database: postgres
 - Username: postgres
-- Password: Postgres2019!
-Then you will need to comment a line of code in application.properties and uncomment the rest about the database.
+- Password: Postgres2019! <br />
+Then you will need to comment a line of code in application.properties and uncomment the rest about the database. <br />
 Comment the line 
 ```shell script
  spring.datasource.url=${JDBC_DATASOURCE-URL}
