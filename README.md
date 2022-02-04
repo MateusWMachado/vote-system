@@ -12,6 +12,8 @@ $ docker-compose up -d
 
 ## How to build the application
 
+To run the command "mvn install" it is necessary to have made the connection with the database before, otherwise the tests will fail.
+
 ```shell script
 $ mvn install
 $ mvn spring-boot:run
@@ -26,6 +28,13 @@ $ mvn test
 ## How to use the application
 
 The application will be listening by default on HTTP port 8080.
+After running the docker compose command, enter the url "localhost:16543" and login with the user "test@test.com.br" and password "root", then go to "Add New Server" and enter the following data:
+- Host name/address: teste-postgres-compose
+- Port: 5432
+- Maintenance Database: postgres
+- Username: postgres
+- Password: Postgres2019!
+
 
 ## Brief Endpoints documentation
 
