@@ -4,18 +4,14 @@ import com.mateuswmachado.votesystem.dto.ScheduleDTO;
 import com.mateuswmachado.votesystem.dto.ScheduleResultDTO;
 import com.mateuswmachado.votesystem.dto.VoteDTO;
 import com.mateuswmachado.votesystem.exceptions.AssociateAlreadyVotedException;
-import com.mateuswmachado.votesystem.exceptions.AssociatedNotFoundException;
 import com.mateuswmachado.votesystem.exceptions.ScheduleException;
 import com.mateuswmachado.votesystem.exceptions.ScheduleNotFoundException;
-import com.mateuswmachado.votesystem.model.Schedule;
 import com.mateuswmachado.votesystem.model.VoteSession;
 import com.mateuswmachado.votesystem.repository.ScheduleRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,11 +19,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -3,11 +3,10 @@ package com.mateuswmachado.votesystem.exceptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(code = HttpStatus.NOT_FOUND)
-public class AssociatedNotFoundException extends Exception {
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class ScheduleSessionFinishedException extends RuntimeException{
 
-    public AssociatedNotFoundException(String message) {
+    public ScheduleSessionFinishedException(String message) {
         super(message);
     }
-
 }

@@ -4,8 +4,7 @@ import com.mateuswmachado.votesystem.dto.ScheduleDTO;
 import com.mateuswmachado.votesystem.dto.ScheduleResultDTO;
 import com.mateuswmachado.votesystem.dto.VoteDTO;
 import com.mateuswmachado.votesystem.enums.TypeVote;
-import com.mateuswmachado.votesystem.exceptions.ScheduleException;
-import com.mateuswmachado.votesystem.exceptions.ScheduleNotFoundException;
+import com.mateuswmachado.votesystem.exceptions.*;
 import com.mateuswmachado.votesystem.model.Schedule;
 import com.mateuswmachado.votesystem.repository.ScheduleRepository;
 import com.mateuswmachado.votesystem.service.validation.ScheduleValidation;
@@ -62,12 +61,12 @@ public class ScheduleServiceImpl implements ScheduleService {
         ScheduleDTO scheduleDTO = this.verifyIfScheduleExists(voteDTO.getIdSchedule());
 
         if (Objects.isNull(scheduleDTO.getVoteSession())) {
-            throw new ScheduleException("Schedule has no voting session");
+            throw new ScheduleHasNoVotingSessionException("Schedule has no voting session");
         }
 
         if(Objects.nonNull(scheduleDTO.getVoteSession().getEndTime()) && scheduleDTO.getVoteSession().getEndTime().isBefore(LocalDateTime.now())) {
             log.info("Schedule session finished");
-            throw new ScheduleException("Schedule session finished");
+            throw new ScheduleSessionFinishedException("Schedule session finished");
         }
 
         scheduleValidation.validateVotes(scheduleDTO.getVotes(), voteDTO.getCpf());
@@ -110,7 +109,7 @@ public class ScheduleServiceImpl implements ScheduleService {
         } else if (TypeVote.NO.getTypeVote().equals(vote)) {
             scheduleDTO.setNoVote(scheduleDTO.getNoVote() + 1);
         } else {
-            throw new ScheduleException("Invalid vote");
+            throw new InvalidVoteException("Invalid vote");
         }
     }
 
