@@ -1,21 +1,27 @@
 package com.mateuswmachado.votesystem.service;
 
 import com.mateuswmachado.votesystem.dto.AssociateDTO;
+import com.mateuswmachado.votesystem.exceptions.AssociatedNotFoundException;
 import com.mateuswmachado.votesystem.model.Associate;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
+
+/** Interface that represents an operations contract on Associate
+ *
+ * @author Mateus W. Machado
+ * @since 02/02/2022
+ * @version 1.0.0
+ */
 
 public interface AssociateService {
 
     List<AssociateDTO> getAllAssociates();
 
-    ResponseEntity<Associate> getAssociateById(@PathVariable Long id);
+    AssociateDTO findAssociateById(Long id) throws AssociatedNotFoundException;
 
-    ResponseEntity<String> saveAssociate(@RequestBody Associate associate, UriComponentsBuilder uriBuilder);
+    ResponseEntity<String> saveAssociate(AssociateDTO associateDTO, UriComponentsBuilder uriBuilder);
 
-    ResponseEntity<String> deleteAssociateById(@PathVariable Long id);
+    AssociateDTO findByCpf(String cpf);
 }
